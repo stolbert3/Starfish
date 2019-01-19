@@ -16,6 +16,6 @@ const taskSchema = new Schema({
 
 taskSchema.plugin(autoIncrement.plugin, { model: 'Task', field: 'taskId', startAt: 13});
 
-const Task = mongoose.model("Task", userSchema);
+const Task = mongoose.model("Task", taskSchema);
 
 module.exports = Task;
