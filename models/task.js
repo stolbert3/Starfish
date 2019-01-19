@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const autoIncrement = require('mongoose-auto-increment');
 
-const connection = mongoose.createConnection(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+const connection = mongoose.createConnection(process.env.MONGODB_URI || "mongodb://localhost/starfishDB");
 
 autoIncrement.initialize(connection);
 
