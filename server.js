@@ -18,13 +18,7 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-const databaseUri = 'mongodb://localhost/starfishDB';
-
-if (process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI);
-} else {
-  mongoose.connect(databaseUri);
-};
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/starfishDB');
 
 // End database configuration
 const db = mongoose.connection;
