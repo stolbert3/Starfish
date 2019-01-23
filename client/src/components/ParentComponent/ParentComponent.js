@@ -5,6 +5,7 @@ class ParentComponent extends React.Component {
         super(props);
     }
     render() {
+        console.log("test");
       return(
 
         <div class="container">
@@ -37,3 +38,4 @@ class ParentComponent extends React.Component {
       );
     }
 }
+export default ParentComponent;
