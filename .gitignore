@@ -1,3 +1,7 @@
 .DS_Store
 node_modules
+<<<<<<< HEAD
 .env
+=======
+package-lock.json
+>>>>>>> e9ed8184d2ac4e385c193146e69b9be794018886

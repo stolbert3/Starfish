@@ -1,8 +1,11 @@
 {
   "name": "mern",
   "version": "1.0.0",
-  "description": "",
+  "description": "This application is designed for a student with autism who is non-verbal and requires assistance with structure in their day. This application will utilize two Applied Behavioral Analysis tools – PECS (The Picture Exchange Communication System) and intermittent reward systems. No application currently combines PECS and intermittent reward systems. There are programs like iRewards and iPrompts that offer aspects of our application, but Starfish is novel in its combination of the two systems.",
   "main": "server.js",
+  "engines": {
+    "node": "10.8.0"
+  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -20,12 +23,21 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "auth0-js": "^9.9.0",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "dotenv": "^6.2.0",
     "express": "^4.15.4",
     "if-env": "^1.0.4",
     "mongoose": "^5.0.17",
-    "mongoose-auto-increment": "^5.0.1"
-  }
+    "react-router-dom": "^4.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stolbert3/Starfish.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stolbert3/Starfish/issues"
+  },
+  "homepage": "https://github.com/stolbert3/Starfish#readme"
 }
