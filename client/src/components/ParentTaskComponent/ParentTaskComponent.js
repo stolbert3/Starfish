@@ -24,3 +24,5 @@ class ParentTaskComponent extends Component {
         )
     }
 }
+
+export default ParentTaskComponent;
