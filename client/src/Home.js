@@ -35,12 +35,12 @@ class Home extends Component {
         }
         {
           !isAuthenticated() && (
-        
+         <div>
              <div className="buttonContainer">
                   <img src="./images/000659-free-Starfish-Logo-online-logo-maker-02.png" />
                   <button onClick={this.login}>Login</button> 
             </div>
-            
+         </div>   
           )
         }
       </div>
