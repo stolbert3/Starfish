@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    }
+    
+    button{
+        padding: 30px 90px;
+        width: 100%;
+        font-size: 44px;
+        margin: 8px;
+        background-color: silver;
+        border-radius: 8px;
+        font-family: Merienda;
+    }
+    
+    img{
+        width: 70px;
+        display: inline;
+        margin-right: 10px;
+    }
