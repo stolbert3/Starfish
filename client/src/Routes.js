@@ -5,6 +5,7 @@ import Callback from './Callback';
 import Auth from './auth';
 import history from './history';
 import ParentComponent from './components/ParentComponent/ParentComponent.js';
+import ChildComponent from './components/ChildComponent/ChildComponent.js';
 const auth = new Auth();
 
 const handleAuthentication = (nextState, replace) => {
@@ -19,6 +20,7 @@ const Routes = () => (
       <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
       <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
       <Route path="/parent" component={ParentComponent} /> 
+      <Route path="/child" component={ChildComponent} /> 
       <Route path="/callback" render={(props) => {
         handleAuthentication(props);
         return <Callback {...props} />

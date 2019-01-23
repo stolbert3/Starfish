@@ -1,7 +1,6 @@
 import  React  from 'react';
-import "./ParentComponent.css";
-
-class ParentComponent extends React.Component {
+import "./ChildComponent.css";
+class ChildComponent extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -13,33 +12,29 @@ class ParentComponent extends React.Component {
 
         <div className="header">
 
-        <h1> Parent </h1>
+        <h1> Child </h1>
 
         <img src="..." alt="..." class="img-thumbnail" />
 
-
-<hr/>
+        <hr/>
         </div>
 
-        
-
-        <div className="Task">
-            <input type="checkbox" name="Task1" value="Task1" />
+           <div className="Task">    
             Task 1
             <img src="" alt="" />
         </div>
         <div className="Task">
-            <input type="checkbox" name="Task1" value="Task1" />
+            
             Task 2
         </div>
 
         <div className="Task">
-            <input type="checkbox" name="Task1" value="Task1" />
+            
             Task 3
         </div>
 
         <div className="Task">
-            <input type="checkbox" name="Task1" value="Task1" />
+            
             Task 4
         </div>
 
@@ -47,4 +42,4 @@ class ParentComponent extends React.Component {
       );
     }
 }
-export default ParentComponent;
+export default ChildComponent;
