@@ -1,0 +1,28 @@
+
+
+button{
+    display: block;
+    margin-left: 15px;
+    margin-top: 14px;
+    padding:  25px 70px;
+    background: silver;
+    border-radius: 5px;
+    border-color: none;
+    font-size: 24px;
+}
+
+div{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+
+.buttonContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import App from './App';
+import "./LoginButton.css";
+
+
 
 class Home extends Component {
   // calls the login method in authentication service
@@ -32,20 +35,12 @@ class Home extends Component {
         }
         {
           !isAuthenticated() && (
-            <div className="container column">
-              <h5>ReactiveSearch Auth0 Example</h5>
-              <h5>
-                You are not logged in! Please{' '}
-                <a
-                  style={{ cursor: 'pointer' }}
-                  onClick={this.login}
-                >
-                  Log In
-                </a>
-                {' '}to continue.
-              </h5>
-              <h6>This is the default <b><code>Home</code></b> component. The <b><code>App</code></b> component will only be visible once you authenticate.</h6>
+         <div>
+             <div className="buttonContainer">
+                  <img src="./images/000659-free-Starfish-Logo-online-logo-maker-02.png" />
+                  <button onClick={this.login}>Login</button> 
             </div>
+         </div>   
           )
         }
       </div>

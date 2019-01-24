@@ -23,15 +23,20 @@ export default class Auth {
       console.log(authResult);
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
+<<<<<<< HEAD
         console.log(this);
 //find by email
         history.replace('/home');
+=======
+        history.replace('/roles');
+>>>>>>> 8016f3b0d2105bf2cc44ff0fa27a6b96f35932f0
       } else if (err) {
         history.replace('/home');
         console.log(err);
       }
     });
   }
+
 
   // Sets user details in localStorage
   setSession = (authResult) => {
