@@ -22,13 +22,14 @@ export default class Auth {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        history.replace('/home');
+        history.replace('/roles');
       } else if (err) {
         history.replace('/home');
         console.log(err);
       }
     });
   }
+
 
   // Sets user details in localStorage
   setSession = (authResult) => {
