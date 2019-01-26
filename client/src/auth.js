@@ -7,10 +7,10 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: 'family-meal-productions.auth0.com',
     clientID: 'cacKrQsbK22uUgAjjp5CSebwNwLfLjYP',
-    redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'https://aqueous-brushlands-18189.herokuapp.com/roles',
+    redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'http://localhost:3000/home',
     audience: 'https://family-meal-productions.auth0.com/userinfo',
     responseType: 'token id_token',
-    scope: 'openid'
+    scope: 'openid email'
   });
 
   login = () => {
@@ -20,9 +20,11 @@ export default class Auth {
   // parses the result after authentication from URL hash
   handleAuthentication = () => {
     this.auth0.parseHash((err, authResult) => {
+      console.log(authResult);
       if (authResult && authResult.accessToken && authResult.idToken) {
         //query api, get user or create new user if null
         this.setSession(authResult);
+        console.log(authResult);
         history.replace('/roles');
       } else if (err) {
         history.replace('/home');
@@ -39,6 +41,7 @@ export default class Auth {
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
+    localStorage.setItem('starfish_email', authResult.idTokenPayload.email);
     // navigate to the home route
     history.replace('/home');
   }
@@ -49,6 +52,7 @@ export default class Auth {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
+    localStorage.removeItem('starfish_email');
     // navigate to the home route
     history.replace('/home');
   }

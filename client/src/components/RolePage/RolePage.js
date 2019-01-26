@@ -8,13 +8,14 @@ class RolesComponent extends React.Component {
         super(props);
     }
     render() {
-        console.log("test");
+        const email = localStorage.getItem("starfish_email");
+        console.log(email);
       return(
     <div className="BodyContainer">
         <div className="container" />
             
-            <button onClick={() => { window.location.pathname = '/parent' }}><img src="./images/serene_lady.svg" />Parent</button>
-            <button onClick={() => { window.location.pathname = '/child'}}><img src="./images/face_neutral_3.svg" />Child</button>
+            <button onClick={() => { window.location.pathname = '/parent/'+ email }}><img src="./images/serene_lady.svg" />Parent</button>
+            <button onClick={() => { window.location.pathname = '/child/'+ email}}><img src="./images/face_neutral_3.svg" />Child</button>
             
         </div>
         
