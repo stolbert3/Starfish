@@ -1,4 +1,4 @@
-const db = require("../user");
+const db = require("../models/user");
 
 // Defining methods for the booksController
 module.exports = {
