@@ -12,8 +12,8 @@ const App = () => (
       
       <Switch>
         <Route exact path="/role" component={RolesComponent} />
-        <Route exact path="/parent" component={ParentComponent} />
-        <Route exact path="/child" component={ChildComponent} />
+        <Route exact path="/parent/:email" component={ParentComponent} />
+        <Route exact path="/child/:email" component={ChildComponent} />
         <Route component={NoMatch} />
       </Switch>
     </div>
