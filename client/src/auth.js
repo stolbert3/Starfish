@@ -21,6 +21,7 @@ export default class Auth {
   handleAuthentication = () => {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
+        //query api, get user or create new user if null
         this.setSession(authResult);
         history.replace('/roles');
       } else if (err) {
