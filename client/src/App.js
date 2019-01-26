@@ -1,18 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
+import ParentComponent from "./components/ParentComponent/ParentComponent.js";
+import RolesComponent from "./components/RolePage/RolePage.js"
+import ChildComponent from "./components/ChildComponent/ChildComponent.js"
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+
 
 const App = () => (
   <Router>
     <div>
-      <Nav />
+      
       <Switch>
-        <Route exact path="/" component={Books} />
-        <Route exact path="/books" component={Books} />
-        <Route exact path="/books/:id" component={Detail} />
+        <Route exact path="/role" component={RolesComponent} />
+        <Route exact path="/parent" component={ParentComponent} />
+        <Route exact path="/child" component={ChildComponent} />
         <Route component={NoMatch} />
       </Switch>
     </div>
@@ -20,5 +21,3 @@ const App = () => (
 );
 
 export default App;
-
-

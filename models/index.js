@@ -1,5 +1,3 @@
 module.exports = {
-
-  User: require("./user"),
-  Task: require("./task")
+  User: require("./user")
 };
