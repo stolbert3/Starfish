@@ -20,8 +20,8 @@ const Routes = () => (
     <div>
       <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
       <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
-      <Route path="/parent" component={ParentComponent} /> 
-      <Route path="/child" component={ChildComponent} /> 
+      <Route path="/parent/:email" component={ParentComponent} /> 
+      <Route path="/child/:email" component={ChildComponent} /> 
       <Route path="/roles" component={RolesComponent} /> 
       <Route path="/callback" render={(props) => {
         handleAuthentication(props);
