@@ -1,5 +1,5 @@
 body{
-    margin-top: -123px;
+    margin-top: -303px;
 }
 
 
@@ -8,11 +8,9 @@ div{
     border-radius: 6px;
 }
 
-.Task{
-    border: 4px solid rgb(0, 17, 255);
-    margin: 10px;
-    width: 400%;
-}
+ .Task{
+     padding: 10px;
+ }
 
 .header{
     display: inline;
@@ -22,3 +20,14 @@ h1{
     display: inline-block;
     margin-right: 40px;
 }
+
+
+
+  .btn {
+      display: inline;
+      padding: 20px;
+      width: 20%;
+      align-items: left;
+      font-size: 40px;
+      margin-left: -650px;
+  }

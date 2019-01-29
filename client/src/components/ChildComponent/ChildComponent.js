@@ -8,16 +8,23 @@ class ChildComponent extends React.Component {
         console.log("test");
       return(
 
+
         <div className="container">
 
         <div className="header">
 
-        <h1> Child </h1>
+        <h1> Child </h1> 
 
-        <img src="..." alt="..." class="img-thumbnail" />
-
-        <hr/>
+       
+        <div className="ScoreCard">
+        Starfish Points:<span>0</span>
         </div>
+       
+
+        </div>
+    
+   
+
 
            <div className="Task">    
             Task 1
@@ -43,3 +50,7 @@ class ChildComponent extends React.Component {
     }
 }
 export default ChildComponent;
+
+//Ideas;
+
+// After the login page,make a page where user puts in custom name.
