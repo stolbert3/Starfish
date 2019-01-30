@@ -1,11 +1,19 @@
 import  React  from 'react';
 import "./ParentComponent.css";
+import API from '../../utils/API.js';
 
 class ParentComponent extends React.Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount() {
+        API.getUser('sydney.katurah@gmail.com')
+            .then(res => {
+                console.log("res", res);
+            }) 
+        }
     render() {
+        
         console.log("test");
       return(
 

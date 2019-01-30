@@ -6,7 +6,8 @@ module.exports = {
   findByEmail: function(req, res) {
     db.User
       .find(req.query.email)
-      .then(dbUser => res.json(dbUser))
+      .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+ 
 }
