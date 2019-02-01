@@ -6,5 +6,10 @@ export default {
   getUser: function (email) {
     return axios.get("/api/user/" + email);
   },
+  updateUser: function () {
+    return axios.post("/api/user/");
+  },
+  
+  
 }
 
