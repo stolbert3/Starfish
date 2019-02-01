@@ -15,7 +15,7 @@ class ParentComponent extends React.Component {
 
         <h1> Parent </h1>
 
-        <img src="..." alt="..." class="img-thumbnail" />
+        <img src="..." alt="..." className="img-thumbnail" />
 
 
 <hr/>
