@@ -5,14 +5,15 @@ const userSchema = new Schema({
   email: { type: String, required: true },
   childName: { type: String, required: true },
   parentName: String,
-  taskList: {
-    task: {
+  tasks: [
+    {
       taskId: Number,
       name: { type: String, required: true },
       image: { type: String, required: true },
-      complete: { type: Boolean, default: false}
+      complete: { type: Boolean, default: false},
+      checked: { type: Boolean, default: false}
     }
-  }
+  ]
 });
 
 const User = mongoose.model("User", userSchema);

@@ -283,7 +283,12 @@ const defaultUserSeed = [
 ];
 
 db.User
+<<<<<<< HEAD
   .create(defaultUserSeed)
+=======
+  .remove({})
+  .then(() => db.User.insertMany(defaultUserSeed))
+>>>>>>> master
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
