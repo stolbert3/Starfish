@@ -284,7 +284,7 @@ const defaultUserSeed = [
 
 db.User
   .remove({})
-  .then(() => db.User.collection.insertMany(defaultUserSeed))
+  .then(() => db.User.insertMany(defaultUserSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
