@@ -9,7 +9,7 @@ module.exports = {
     //console.log("res", res)
 
     User
-      .find({ email: req.params.email })
+      .findOne({ email: req.params.email })
       .then(dbModel => {
         console.log(dbModel);
         return res.json(dbModel)
@@ -17,15 +17,21 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
-  upate: function (req, res) {
+  update: function (req, res) {
 
     User
-    .findOneAndUpdate({_id: req.params.taskId}, req.body)
-    .then(dbModel => {
-      return res.json(dbModel)
-    })
-    .catch(err => res.status(422).json(err));
+      .update({_id: id}, {$set: {tasks: data}}, callback);
 
-  }
+  },
+
+  create: function (req, res) {
+    User
+      .create(req.body)
+      .then(dbModel => {
+        console.log(dbModel);
+        return res.json(dbModel)
+      })
+      .catch(err => res.status(422).json(err));
+  },
 
 }

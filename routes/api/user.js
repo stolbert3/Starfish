@@ -18,12 +18,17 @@ router.route("/:email")
   //  res.json(req.params.email);
   //})
   .get (userController.findByEmail)
-  .post(function(req, res, next) {
-    next(new Error('not implemented'));
-  })
-  .put(function(req, res, next) {
-    next(new Error('not implemented'));
-  })
+  .put (userController.update)
+  
+  // create post for future record creation
+  //.post (userController.create)
+
+  //.post(function(req, res, next) {
+  //  next(new Error('not implemented'));
+  //})
+  //.put(function(req, res, next) {
+    //next(new Error('not implemented'));
+  //})
   .delete(function(req, res, next) {
     next(new Error('not implemented'));
   });
