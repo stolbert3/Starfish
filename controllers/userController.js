@@ -3,13 +3,13 @@ const User = require("../models/user");
 // Defining methods for the booksController
 module.exports = {
 
-  findByEmail: function(req, res) {
-   // console.log("req", req)
-    
+  findByEmail: function (req, res) {
+    // console.log("req", req)
+
     //console.log("res", res)
 
     User
-      .find({ email: req.params.email})
+      .find({ email: req.params.email })
       .then(dbModel => {
         console.log(dbModel);
         return res.json(dbModel)
@@ -17,5 +17,15 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
+  upate: function (req, res) {
+
+    User
+    .findOneAndUpdate({_id: req.params.taskId}, req.body)
+    .then(dbModel => {
+      return res.json(dbModel)
+    })
+    .catch(err => res.status(422).json(err));
+
+  }
 
 }
