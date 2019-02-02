@@ -9,13 +9,15 @@ router.param('email', function(req, res, next, id) {
 
 // Matches with "/api/user"
 router.route("/:email")
-  .all(function(req, res, next) {
-    // runs for all HTTP verbs
-    next();
-  })
-  .get(function(req, res, next) {
-    res.json(req.user);
-  })
+  // .all(function(req, res, next) {
+  //   // runs for all HTTP verbs
+  //   next();
+  // })
+  //.get(function(req, res, next) {
+    // console.log('req in get', req)
+  //  res.json(req.params.email);
+  //})
+  .get (userController.findByEmail)
   .post(function(req, res, next) {
     next(new Error('not implemented'));
   })
