@@ -18,7 +18,7 @@ const handleAuthentication = (nextState, replace) => {
 
 const Routes = () => (
   <Router history={history} component={Home}>
-    <div>
+    <div style={{width:"100%"}}>
       <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
       <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
       <Route path="/parent" component={ParentComponent} /> 

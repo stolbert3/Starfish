@@ -1,16 +1,25 @@
-body{
-    margin-top: -303px;
+.Parent{
+    background-color:white;
+    width: 100%;
 }
 
 
-div{
+body{
+    margin-top: -70px;
+}
+
+
+div .Task{
+    width: 70%;
     padding: 34px;
     border-radius: 6px;
+    background-color: rgb(255,102,0);
+    box-shadow: 2px 5px 12px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 
- .Task{
-     padding: 10px;
- }
 
 .header{
     display: inline;
@@ -29,5 +38,10 @@ h1{
       width: 20%;
       align-items: left;
       font-size: 40px;
-      margin-left: -650px;
+      /* margin-left: -650px; */
+  }
+
+  .Task button{
+      background: rgb(228, 87, 5);
+      border: 3px solid white;
   }

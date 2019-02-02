@@ -1,15 +1,29 @@
+body{
+
+background-repeat: none;
+background-size: cover;
+}
 
 
-button{
+
+.buttonContainer button{
     display: block;
     margin-left: 15px;
     margin-top: 14px;
-    padding:  25px 70px;
-    background: silver;
+    padding:  25px 20px;
+    color: white;
+    background: rgb(197, 89, 17) !important;
     border-radius: 5px;
-    border-color: none;
+    border: none;
     font-size: 24px;
+    cursor: pointer;
 }
+
+
+.buttonContainer button:hover{
+    background: rgb(161, 69, 7) !important;
+}
+
 
 div{
 display: flex;
@@ -26,3 +40,6 @@ align-items: center;
    
 }
 
+.buttonContainer img{
+    width: 40%;
+}

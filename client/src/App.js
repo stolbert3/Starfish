@@ -7,7 +7,7 @@ import Nav from "./components/Nav";
 
 const App = () => (
   <Router>
-    <div>
+    <div style={{width:"100%"}}>
       <Nav />
       <Switch>
         <Route exact path="/" component={Books} />

@@ -9,7 +9,8 @@ class ParentComponent extends React.Component {
 
         this.state= {
           cSelected: [],
-          Tasks: TaskObject.tasks
+          Tasks: TaskObject.tasks,
+          Images: TaskObject.image
         };
 
         this.onCheckboxBtnClick = this.onCheckboxBtnClick.bind(this);
@@ -32,7 +33,8 @@ class ParentComponent extends React.Component {
         console.log(TaskObject);
       return(
     
-        <div className="container">
+
+        <div className="Container Parent">
 
            <div className="header">
 
@@ -44,35 +46,72 @@ class ParentComponent extends React.Component {
                 <hr/>
            </div>
 
-        {this.state.Tasks.map((task, index) => {
+
+{this.state.Tasks.map((task, index) => {
+            let image;
+            switch(task.name) {
+                case 'Brush Teeth':
+                    image = "/images/brush_teeth_,_to.svg"
+                    break;
+                case 'Brush Hair':
+                    image = "images/brush_hair_,_to.svg"
+                    break;
+                case 'Get Dressed':
+                    image = "images/change_clothes_,_to.svg"
+                    break;
+                case 'Eat Breakfast':
+                    image = "images/cornflakes.svg"
+                    break;
+                case 'Eat Lunch':
+                    image = "images/sandwich.svg"
+                    break;
+                case 'Eat Dinner':
+                    image = "images/dinner.svg"
+                    break;
+                case 'Play Inside':
+                    image = "images/play_,_to.svg"
+                    break;
+                case 'Play Outside':
+                    image = "images/swing_,_to.svg"
+                    break;
+                case 'In-home Therapy':
+                    image = "images/speech_language_therapist_1a.svg"
+                    break;
+                case 'Take Shower':
+                    image = "images/shower_1_,_to.svg"
+                    break;
+                case 'Put on PJs':
+                    image = "images/pyjamas.svg"
+                    break;
+                case 'Go to Bed':
+                    image = "images/sleep_male_,_to.svg"
+                    break;
+
+
+
+                default: 
+                    image = "/images/serene_lady.svg"
+                    break;
+            }
             return(
                 <div key={task.name} className="Task">
+                   
+                    <Button color={task.checked? "success" : "secondary"} onClick={() => this.onCheckboxBtnClick(index)} active={task.checked}> {task.checked ? "✓" : "✕"}</Button>      
                     <h1>{task.name}</h1>
-                    <Button color={task.checked? "success" : "secondary"} onClick={() => this.onCheckboxBtnClick(index)} active={task.checked}> {task.checked ? "✓" : "✕"}</Button>                
+                    <img src={image} />          
                 </div>
             )
         })}
 
-        <div className="Task">
-        <Button color={this.state.cSelected.includes(1) ? "success" : "secondary"} onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>{this.state.cSelected.includes(1) ? "✓" : "✕"}</Button>
-            
-        </div>
 
-        <div className="Task">
-        <Button color={this.state.cSelected.includes(2) ? "success" : "secondary"} onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>{this.state.cSelected.includes(2) ? "✓" : "Task 2"}</Button>
-            
-        </div>
 
-        <div className="Task">
-        <Button color={this.state.cSelected.includes(3) ? "success" : "secondary"} onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>{this.state.cSelected.includes(3) ? "✓" : "Task 3"}</Button>
-            
-        </div>
 
-        <div className="Task">
-    
-        <Button color={this.state.cSelected.includes(4) ? "success" : "secondary"} onClick={() => this.onCheckboxBtnClick(4)} active={this.state.cSelected.includes(4)}>{this.state.cSelected.includes(4) ? "✓" : "Task 4"}</Button>
-            
-        </div>
+   
+
+
+
+
+
 
         <div>
         </div>

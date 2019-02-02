@@ -1,8 +1,18 @@
 import  React  from 'react';
 import "./ChildComponent.css";
+import TaskObject from "../../assets/TaskObject.js"
+
+
+
+
 class ChildComponent extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state= {
+            cSelected: [],
+            Tasks: TaskObject.tasks
+          };
     }
     render() {
         console.log("test");
@@ -23,7 +33,15 @@ class ChildComponent extends React.Component {
 
         </div>
     
-   
+        {this.state.Tasks.map((task, index) => {
+            return(
+
+                <div key={task.name} className="Task">
+                    
+                    <h1>{task.name}</h1>                
+                </div>
+            )
+        })}
 
 
            <div className="Task">    
