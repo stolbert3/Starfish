@@ -20,7 +20,7 @@ module.exports = {
   update: function (req, res) {
 
     User
-      .update({_id: id}, {$set: {tasks: data}}, callback);
+      .update({email: email}, {$set: {tasks: tasks}}, callback);
 
   },
 

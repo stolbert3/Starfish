@@ -9,9 +9,9 @@ export default {
   },
   
   
-  updateUser: function (id, tasks) {
+  updateUser: function (email, tasks) {
     
-    return axios.put( "api/user/" + id, tasks)
+    return axios.put( "api/user/" + email, tasks)
      .then(res => console.log(res.data));
   },
   

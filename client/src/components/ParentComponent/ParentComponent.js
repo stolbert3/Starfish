@@ -15,7 +15,7 @@ class ParentComponent extends React.Component {
                 console.log("res", res);
                 this.setState({
                     user:res.data
-                }, ()=> console.log(this.state.user))
+                }, ()=> console.log(this.state.user.tasks))
             }) 
         }
     render() {
