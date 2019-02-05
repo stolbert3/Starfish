@@ -20,7 +20,9 @@ module.exports = {
   update: function (req, res) {
 
     User
-      .update({email: email}, {$set: {tasks: tasks}}, callback);
+      .update({email: email}, {$set: {tasks: tasks}}, callback)
+      .then(res => console.log('update res', res))
+      .catch(err => res.status(422).json(err))
 
   },
 

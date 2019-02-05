@@ -17,6 +17,11 @@ class ParentComponent extends React.Component {
                     user:res.data
                 }, ()=> console.log(this.state.user.tasks))
             }) 
+
+        API.updateUser('ahs4448@gmail.com', [])
+            .then(res => {
+                console.log('frontend update res', res);
+            })
         }
     render() {
         
@@ -39,7 +44,7 @@ class ParentComponent extends React.Component {
 
         <div className="Task">
             <input type="checkbox" name="Task1" value="Task1" />
-            Task 1
+            Task 1: {this.state.user.tasks}
             <img src="" alt="" />
         </div>
         <div className="Task">
