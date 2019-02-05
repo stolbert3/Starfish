@@ -1,11 +1,26 @@
 import  React  from 'react';
 import "./ParentComponent.css";
+import API from '../../utils/API.js';
 
 class ParentComponent extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            user: {}
+        }
     }
+    componentDidMount() {
+        API.getUser('ahs4448@gmail.com')
+            .then(res => {
+                console.log("res", res);
+                this.setState({
+                    user:res.data
+                }, ()=> console.log(this.state.user.tasks))
+            }) 
+            
+        }
     render() {
+        
         console.log("test");
       return(
 
@@ -13,7 +28,7 @@ class ParentComponent extends React.Component {
 
         <div className="header">
 
-        <h1> Parent </h1>
+        <h1> Parent: {this.state.user.childName} </h1>
 
         <img src="..." alt="..." className="img-thumbnail" />
 
@@ -25,7 +40,7 @@ class ParentComponent extends React.Component {
 
         <div className="Task">
             <input type="checkbox" name="Task1" value="Task1" />
-            Task 1
+            Task 1: {this.state.user.tasks}
             <img src="" alt="" />
         </div>
         <div className="Task">
