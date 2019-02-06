@@ -1,12 +1,19 @@
-const db = require("../models/user");
+const User = require("../models/user");
 
 // Defining methods for the booksController
 module.exports = {
 
-  findByEmail: function(req, res) {
-    db.User
-      .find(req.query.email)
-      .then(dbUser => res.json(dbUser))
-      .catch(err => res.status(422).json(err));
+  findByEmail: function (req, res) {
+    return User.findOne({ email: req.params.email});  
+    },
+
+  update: function (req, res) {
+    console.log("WE IN HERE ", req.body);
+    return User.findOneAndUpdate({email: req.params.email}, {$set: {tasks: req.body}})
   },
+
+  create: function (req, res) {
+    return User.create(req.body);
+  },
+
 }
