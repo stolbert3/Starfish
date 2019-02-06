@@ -25,7 +25,7 @@ const Routes = () => (
       <Route path="/parent/:email" component={ParentComponent} /> 
       <Route path="/child/:email" component={ChildComponent} /> 
    
-      <Route path="/progress" component={ChildProgressView} /> 
+      <Route path="/progress/:email" component={ChildProgressView} /> 
       <Route path="/roles" component={RolesComponent} /> 
       <Route path="/TaskDetails" component={TaskDetails} />
       <Route path="/callback" render={(props) => {

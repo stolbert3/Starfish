@@ -93,6 +93,8 @@ class ChildComponent extends React.Component {
 
     render() {
         console.log(TaskObject);
+        const parentLink = `/parent/${email}`
+        const progressLink = `/progress/${email}`
       return(
     
 
@@ -101,9 +103,9 @@ class ChildComponent extends React.Component {
            <div className="header">
            <div>
               <ul id="nav">
-                <li><NavLink to="/parent">Parent</NavLink></li>
+                <li><NavLink to={parentLink}>Parent</NavLink></li>
                 <li><NavLink to="/roles">Home</NavLink></li>
-                <li><NavLink to="/progress">Progress</NavLink></li>
+                <li><NavLink to={progressLink}>Progress</NavLink></li>
                 
               </ul>
             </div>
@@ -168,7 +170,7 @@ class ChildComponent extends React.Component {
                     break;
             }
 
-            const visible = task.complete ? 'none' : '';
+            const visible = (!task.checked || task.complete) ? 'none' : '';
             
             return(
 
