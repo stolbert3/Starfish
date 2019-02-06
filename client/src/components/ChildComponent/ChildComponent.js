@@ -93,6 +93,7 @@ class ChildComponent extends React.Component {
 
     render() {
         console.log(TaskObject);
+        const email = this.state.email;
         const parentLink = `/parent/${email}`
         const progressLink = `/progress/${email}`
       return(

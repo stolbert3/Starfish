@@ -92,37 +92,37 @@ componentDidMount(){
                     image = "/images/brush_teeth_,_to.svg"
                     break;
                 case 'Brush Hair':
-                    image = "images/brush_hair_,_to.svg"
+                    image = "/images/brush_hair_,_to.svg"
                     break;
                 case 'Get Dressed':
-                    image = "images/change_clothes_,_to.svg"
+                    image = "/images/change_clothes_,_to.svg"
                     break;
                 case 'Eat Breakfast':
-                    image = "images/cornflakes.svg"
+                    image = "/images/cornflakes.svg"
                     break;
                 case 'Eat Lunch':
-                    image = "images/sandwich.svg"
+                    image = "/images/sandwich.svg"
                     break;
                 case 'Eat Dinner':
-                    image = "images/dinner.svg"
+                    image = "/images/dinner.svg"
                     break;
                 case 'Play Inside':
-                    image = "images/play_,_to.svg"
+                    image = "/images/play_,_to.svg"
                     break;
                 case 'Play Outside':
-                    image = "images/swing_,_to.svg"
+                    image = "/images/swing_,_to.svg"
                     break;
                 case 'In-home Therapy':
-                    image = "images/speech_language_therapist_1a.svg"
+                    image = "/images/speech_language_therapist_1a.svg"
                     break;
                 case 'Take Shower':
-                    image = "images/shower_1_,_to.svg"
+                    image = "/images/shower_1_,_to.svg"
                     break;
                 case 'Put on PJs':
-                    image = "images/pyjamas.svg"
+                    image = "/images/pyjamas.svg"
                     break;
                 case 'Go to Bed':
-                    image = "images/sleep_male_,_to.svg"
+                    image = "/images/sleep_male_,_to.svg"
                     break;
 
 

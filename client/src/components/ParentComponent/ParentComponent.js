@@ -51,12 +51,17 @@ class ParentComponent extends React.Component {
       }
 
       submitChecked = () => {
+          const email = this.state.email;
          const newTaskArray = this.state.Tasks.slice();
+
          console.log(newTaskArray);
 
          API.updateUser(this.state.email, newTaskArray)
          .then (res => console.log("Submitted Task Array", res))
+         .then (window.location.pathname = '/progress/' + email )
       }
+
+
 
     render() {
         const email = this.state.email;
@@ -82,7 +87,7 @@ class ParentComponent extends React.Component {
 
                 <h1> Parent </h1>
 
-                <h1>Points:{this.state.score}</h1>
+               
 
 
                 <hr/>
@@ -147,6 +152,7 @@ class ParentComponent extends React.Component {
 
 
 <div id="submitChecked" onClick={this.submitChecked}>Submit</div>
+
    
 
 
