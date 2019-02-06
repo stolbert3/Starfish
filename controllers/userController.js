@@ -4,36 +4,16 @@ const User = require("../models/user");
 module.exports = {
 
   findByEmail: function (req, res) {
-    // console.log("req", req)
-
-    //console.log("res", res)
-
-    User
-      .findOne({ email: req.params.email })
-      .then(dbModel => {
-        console.log(dbModel);
-        return res.json(dbModel)
-      })
-      .catch(err => res.status(422).json(err));
-  },
+    return User.findOne({ email: req.params.email});  
+    },
 
   update: function (req, res) {
-
-    User
-      .update({email: email}, {$set: {tasks: tasks}}, callback)
-      .then(res => console.log('update res', res))
-      .catch(err => res.status(422).json(err))
-
+    console.log("WE IN HERE ", req.body);
+    return User.findOneAndUpdate({email: req.params.email}, {$set: {tasks: req.body}})
   },
 
   create: function (req, res) {
-    User
-      .create(req.body)
-      .then(dbModel => {
-        console.log(dbModel);
-        return res.json(dbModel)
-      })
-      .catch(err => res.status(422).json(err));
+    return User.create(req.body);
   },
 
 }

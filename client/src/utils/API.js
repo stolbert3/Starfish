@@ -11,8 +11,8 @@ export default {
   
   updateUser: function (email, tasks) {
     
-    return axios.put( "api/user/" + email, tasks)
-     .then(res => console.log(res.data));
+    return axios.put("/api/user/" + email, tasks)
+     .then(res => console.log(res));
   },
   
   createUser: function () {

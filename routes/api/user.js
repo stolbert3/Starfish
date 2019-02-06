@@ -9,28 +9,47 @@ router.param('email', function(req, res, next, id) {
 
 // Matches with "/api/user"
 router.route("/:email")
-  // .all(function(req, res, next) {
-  //   // runs for all HTTP verbs
-  //   next();
-  // })
-  //.get(function(req, res, next) {
-    // console.log('req in get', req)
-  //  res.json(req.params.email);
-  //})
-  .get (userController.findByEmail)
-  .put (userController.update)
+   .all(function(req, res, next) {
+     // runs for all HTTP verbs
+     next();
+  })
+  .get(function(req, res, next) {
+    req.user.exec(function(err, dbModel) {
+      if (err) {
+        console.log(500);
+        res.status(500);
+      }      
+      res.status(200).send(dbModel);
+    });
+  })
+  .put(function(req, res, next) {
+    userController.update(req, res).exec(function (err, updatedDoc) {
+      if (err) {
+        console.log(500);
+        res.status(500);
+      }
+      res.status(200).send(updatedDoc);
+    });
+  })
   
   // create post for future record creation
-  //.post (userController.create)
+  // .post(function(req, res, next) {
+  //   userController.create(req, res).exec(function (err, doc) {
+  //     if (err) {
+  //       console.log(500);
+  //       res.status(500);
+  //     }
+  //     res.status(200).send(doc);
+  //   })
 
-  //.post(function(req, res, next) {
-  //  next(new Error('not implemented'));
-  //})
-  //.put(function(req, res, next) {
-    //next(new Error('not implemented'));
-  //})
-  .delete(function(req, res, next) {
-    next(new Error('not implemented'));
-  });
+  // //.post(function(req, res, next) {
+  // //  next(new Error('not implemented'));
+  // //})
+  // //.put(function(req, res, next) {
+  //   //next(new Error('not implemented'));
+  // //})
+  // .delete(function(req, res, next) {
+  //   next(new Error('not implemented'));
+  // });
 
 module.exports = router;
