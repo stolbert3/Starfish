@@ -55,6 +55,10 @@ componentDidMount(){
 
     render() {
         console.log(TaskObject);
+        const email = this.state.email;
+        const parentLink = `/parent/${email}`
+        const childLink = `/child/${email}`
+
       return(
     
 
@@ -64,8 +68,8 @@ componentDidMount(){
 
            <div>
               <ul id="nav">
-                <li><NavLink to="/child">Child</NavLink></li>
-                <li><NavLink to="/parent">Parent</NavLink></li>
+                <li><NavLink to={childLink}>Child</NavLink></li>
+                <li><NavLink to={parentLink}>Parent</NavLink></li>
                 <li><NavLink to="/roles">Home</NavLink></li>
               </ul>
             </div>
