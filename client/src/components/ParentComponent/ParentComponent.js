@@ -13,11 +13,21 @@ class ParentComponent extends React.Component {
         API.getUser('ahs4448@gmail.com')
             .then(res => {
                 console.log("res", res);
-                this.setState({
-                    user:res.data
-                }, ()=> console.log(this.state.user.tasks))
+                // this.setState({
+                //     user:res.data
+                // }, ()=> console.log(this.state.user.tasks))
+                if (res.data.tasks.length > 0) {
+                    let tasks = res.data.tasks.slice();
+                    tasks[0].complete = true;
+                    API.updateUser('ahs4448@gmail.com', tasks)
+                    .then(res => console.log('FRONT END UPDATE TEST', res));
+                }
             }) 
-            
+
+        // API.updateUser('ahs4448@gmail.com', [])
+        //     .then(res => {
+        //         console.log('frontend update res', res);
+        //     })
         }
     render() {
         

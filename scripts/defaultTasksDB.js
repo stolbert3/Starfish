@@ -3,7 +3,7 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/starfishDB"
+  "mongodb://localhost:27017/starfishDB", {"useNewUrlParser": true}
 );
 
 const defaultTaskSeed = [

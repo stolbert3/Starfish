@@ -3,7 +3,7 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/starfishDB"
+  "mongodb://localhost:27017/starfishDB", {"useNewUrlParser": true}
 );
 
 const defaultUserSeed = [
@@ -283,10 +283,10 @@ const defaultUserSeed = [
 ];
 
 db.User
-  .remove({})
-  .then(() => db.User.insertMany(defaultUserSeed))
+  .create(defaultUserSeed)
+ 
   .then(data => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result + " records inserted!");
     process.exit(0);
   })
   .catch(err => {
