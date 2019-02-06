@@ -2,6 +2,7 @@ import  React  from 'react';
 import "./ChildComponent.css";
 import TaskObject from "../../assets/TaskObject.js";
 import {Link , NavLink, withRouter} from 'react-router-dom'
+import API from "../../utils/API.js";
 
 
 class ChildComponent extends React.Component {
@@ -15,6 +16,31 @@ class ChildComponent extends React.Component {
         };
 
         this.onCheckboxBtnClick = this.onCheckboxBtnClick.bind(this);
+    }
+
+    componentDidMount() {
+        const email = localStorage.getItem("starfish_email");
+        this.setState ({email: email})
+
+        API.getUser(email)
+        .then(res => {
+            console.log("res", res);
+            this.setState({
+                Tasks:res.data.tasks
+            }, ()=> console.log("state.Tasks",this.state.Tasks))
+            // if (res.data.tasks.length > 0) {
+            //     let tasks = res.data.tasks.slice();
+            //     tasks[0].complete = true;
+            //     API.updateUser('ahs4448@gmail.com', tasks)
+            //     .then(res => console.log('FRONT END UPDATE TEST', res));
+            // }
+        }) 
+   
+
+        // API.updateUser('ahs4448@gmail.com', [])
+        //     .then(res => {
+        //         console.log('frontend update res', res);
+        //     })
     }
 
 
@@ -57,6 +83,9 @@ class ChildComponent extends React.Component {
       UpdateDB = () => {
         const newTaskArray = this.state.Tasks.slice();
         console.log("working", newTaskArray);
+
+        API.updateUser(this.state.email, newTaskArray)
+         .then (res => console.log("Submitted Task Array", res))
 
        //  API.findOneAndUpdate(email, newTaskArray)
      }
