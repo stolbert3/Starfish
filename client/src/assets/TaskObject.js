@@ -58,7 +58,7 @@
         },
         {
             "taskId": 8,
-            "name": "Play Oustide",
+            "name": "Play Outside",
             "image": "../mulberry-symbols/EN-symbols/swing_,_to.svg",
             "complete": false,
             "checked": false,

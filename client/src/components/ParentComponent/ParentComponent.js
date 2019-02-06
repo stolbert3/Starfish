@@ -1,7 +1,8 @@
 import  React  from 'react';
 import "./ParentComponent.css";
 import { Button, ButtonGroup } from 'reactstrap';
-import TaskObject from "../../assets/TaskObject.js"
+import TaskObject from "../../assets/TaskObject.js";
+import {Link , NavLink, withRouter} from 'react-router-dom'
 
 class ParentComponent extends React.Component {
     constructor(props) {
@@ -9,8 +10,8 @@ class ParentComponent extends React.Component {
 
         this.state= {
           cSelected: [],
-          Tasks: TaskObject.tasks,
-          Images: TaskObject.image
+          Tasks: TaskObject.tasks,  
+          score: 0,
         };
 
         this.onCheckboxBtnClick = this.onCheckboxBtnClick.bind(this);
@@ -26,8 +27,12 @@ class ParentComponent extends React.Component {
         })
       }
 
+      submitChecked = () => {
+         const newTaskArray = this.state.Tasks.slice();
+         console.log(newTaskArray);
 
-
+        //  API.findOneAndUpdate(email, newTaskArray)
+      }
 
     render() {
         console.log(TaskObject);
@@ -35,12 +40,21 @@ class ParentComponent extends React.Component {
     
 
         <div className="Container Parent">
-
+       
            <div className="header">
+           <div>
+              <ul id="nav">
+                <li><NavLink to="/child">Child</NavLink></li>
+                <li><NavLink to="/roles">Home</NavLink></li>
+                <li><NavLink to="/progress">Progress</NavLink></li>
+                
+              </ul>
+            </div>
+           
 
                 <h1> Parent </h1>
 
-                <img src="..." alt="..." class="img-thumbnail" />
+                <h1>Points:{this.state.score}</h1>
 
 
                 <hr/>
@@ -71,7 +85,7 @@ class ParentComponent extends React.Component {
                 case 'Play Inside':
                     image = "images/play_,_to.svg"
                     break;
-                case 'Play Outside':
+                case 'Play Oustide':
                     image = "images/swing_,_to.svg"
                     break;
                 case 'In-home Therapy':
@@ -87,25 +101,24 @@ class ParentComponent extends React.Component {
                     image = "images/sleep_male_,_to.svg"
                     break;
 
-
-
                 default: 
-                    image = "/images/serene_lady.svg"
+                    image = "/images/swing_,_to.svg"
                     break;
             }
             return(
                 <div key={task.name} className="Task">
                    
                     <Button color={task.checked? "success" : "secondary"} onClick={() => this.onCheckboxBtnClick(index)} active={task.checked}> {task.checked ? "✓" : "✕"}</Button>      
-                    <h1>{task.name}</h1>
-                    <img src={image} />          
+                    <img src={image} />   
+                    <h1>{task.name}</h1>       
                 </div>
+
             )
         })}
 
 
 
-
+<div id="submitChecked" onClick={this.submitChecked}>Submit</div>
    
 
 

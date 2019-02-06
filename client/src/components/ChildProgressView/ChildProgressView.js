@@ -1,10 +1,9 @@
 import  React  from 'react';
-import "./ChildComponent.css";
+import "../ChildComponent/ChildComponent.css";
 import TaskObject from "../../assets/TaskObject.js";
 import {Link , NavLink, withRouter} from 'react-router-dom'
 
-
-class ChildComponent extends React.Component {
+class ChildProgressView extends React.Component {
     constructor(props) {
         super(props);
 
@@ -17,7 +16,9 @@ class ChildComponent extends React.Component {
         this.onCheckboxBtnClick = this.onCheckboxBtnClick.bind(this);
     }
 
-
+componentDidMount(){
+    this.ScoreCount()
+}
 
     onCheckboxBtnClick (index) {
         let copy = this.state.Tasks.slice();
@@ -48,18 +49,8 @@ class ChildComponent extends React.Component {
         copy[index].complete = true;
         this.setState({
             Tasks: copy
-        }, () => {this.ScoreCount(); this.UpdateDB()})
+        }, this.ScoreCount)
       }
-
-
-
-
-      UpdateDB = () => {
-        const newTaskArray = this.state.Tasks.slice();
-        console.log("working", newTaskArray);
-
-       //  API.findOneAndUpdate(email, newTaskArray)
-     }
 
 
     render() {
@@ -70,29 +61,31 @@ class ChildComponent extends React.Component {
         <div className="Container Parent">
 
            <div className="header">
+
            <div>
               <ul id="nav">
+                <li><NavLink to="/child">Child</NavLink></li>
                 <li><NavLink to="/parent">Parent</NavLink></li>
                 <li><NavLink to="/roles">Home</NavLink></li>
-                <li><NavLink to="/progress">Progress</NavLink></li>
-                
               </ul>
             </div>
 
 
 
 
+                <h1> Child Progress</h1>
 
-                <h1> Child </h1>
+
+                {/* <img src="..." alt="..." class="img-thumbnail" /> */}
                 <h1>Points:{this.state.score}</h1>
 
                 <hr/>
            </div>
 
 
+<h1>Incomplete Tasks</h1>
 
-
-{this.state.Tasks.map((task, index) => {
+{this.state.Tasks.filter(task =>(!task.complete) ).map((task, index) => {
             let image;
             switch(task.name) {
                 case 'Brush Teeth':
@@ -143,7 +136,69 @@ class ChildComponent extends React.Component {
             
             return(
 
-                <div key={task.name} style = {{display: visible}} className="Task" onClick={() => this.handleCompletedTask(index)}>
+                <div key={task.name} style = {{display: visible}} className="Task">
+                   
+                         
+                    <img src={image} />   
+                    <h1>{task.name}</h1>       
+                </div>
+            )
+        })}
+
+        <h1>Complete Tasks</h1>
+
+        {this.state.Tasks.filter(task =>task.complete ).map((task, index) => {
+            let image;
+            switch(task.name) {
+                case 'Brush Teeth':
+                    image = "/images/brush_teeth_,_to.svg"
+                    break;
+                case 'Brush Hair':
+                    image = "images/brush_hair_,_to.svg"
+                    break;
+                case 'Get Dressed':
+                    image = "images/change_clothes_,_to.svg"
+                    break;
+                case 'Eat Breakfast':
+                    image = "images/cornflakes.svg"
+                    break;
+                case 'Eat Lunch':
+                    image = "images/sandwich.svg"
+                    break;
+                case 'Eat Dinner':
+                    image = "images/dinner.svg"
+                    break;
+                case 'Play Inside':
+                    image = "images/play_,_to.svg"
+                    break;
+                case 'Play Outside':
+                    image = "images/swing_,_to.svg"
+                    break;
+                case 'In-home Therapy':
+                    image = "images/speech_language_therapist_1a.svg"
+                    break;
+                case 'Take Shower':
+                    image = "images/shower_1_,_to.svg"
+                    break;
+                case 'Put on PJs':
+                    image = "images/pyjamas.svg"
+                    break;
+                case 'Go to Bed':
+                    image = "images/sleep_male_,_to.svg"
+                    break;
+
+
+
+                default: 
+                    image = "/images/serene_lady.svg"
+                    break;
+            }
+
+            
+            
+            return(
+
+                <div key={task.name} className="Task">
                    
                          
                     <img src={image} />   
@@ -159,7 +214,7 @@ class ChildComponent extends React.Component {
     }
 }
 
-export default ChildComponent
+export default ChildProgressView
 
 
 //Ideas;

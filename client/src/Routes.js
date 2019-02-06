@@ -8,6 +8,7 @@ import ParentComponent from './components/ParentComponent/ParentComponent.js';
 import ChildComponent from './components/ChildComponent/ChildComponent.js';
 import RolesComponent from "./components/RolePage/RolePage";
 import TaskDetails from "./components/TaskDetails.js";
+import ChildProgressView from "./components/ChildProgressView/ChildProgressView";
 const auth = new Auth();
 
 const handleAuthentication = (nextState, replace) => {
@@ -23,6 +24,7 @@ const Routes = () => (
       <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
       <Route path="/parent" component={ParentComponent} /> 
       <Route path="/child" component={ChildComponent} /> 
+      <Route path="/progress" component={ChildProgressView} /> 
       <Route path="/roles" component={RolesComponent} /> 
       <Route path="/TaskDetails" component={TaskDetails} />
       <Route path="/callback" render={(props) => {
