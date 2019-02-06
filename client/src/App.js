@@ -8,8 +8,8 @@ import NoMatch from "./pages/NoMatch";
 
 const App = () => (
   <Router>
-    <div>
-      
+    <div style={{width:"100%"}}>
+      {/* <Nav /> */}
       <Switch>
         <Route exact path="/role" component={RolesComponent} />
         <Route exact path="/parent/:email" component={ParentComponent} />
