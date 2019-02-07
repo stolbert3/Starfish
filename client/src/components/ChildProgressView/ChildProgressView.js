@@ -58,6 +58,7 @@ componentDidMount(){
         const email = this.state.email;
         const parentLink = `/parent/${email}`
         const childLink = `/child/${email}`
+        const rolesLink = `/roles/${email}`
 
       return(
     
@@ -70,7 +71,7 @@ componentDidMount(){
               <ul id="nav">
                 <li><NavLink to={childLink}>Child</NavLink></li>
                 <li><NavLink to={parentLink}>Parent</NavLink></li>
-                <li><NavLink to="/roles">Home</NavLink></li>
+                <li><NavLink to={rolesLink}>Home</NavLink></li>
               </ul>
             </div>
 

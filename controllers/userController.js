@@ -15,7 +15,7 @@ module.exports = {
 
   create: function (req, res) {
     var userEmail = req.body.email.text();
-    return User.create({email: userEmail}, {childName: ''}, {parentName: ''}, {tasks: defaultTaskSeed})
-  },
+    return User.create({email: userEmail}, {childName: ''}, {parentName: ''}, {tasks: defaultTaskSeed});
+  }
 
 }

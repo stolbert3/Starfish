@@ -67,6 +67,7 @@ class ParentComponent extends React.Component {
         const email = this.state.email;
         const childLink = `/child/${email}`
         const progressLink = `/progress/${email}`
+        const rolesLink = `/roles/${email}`
 
         console.log(TaskObject);
       return(
@@ -78,7 +79,7 @@ class ParentComponent extends React.Component {
            <div>
               <ul id="nav">
                 <li><NavLink to={childLink}>Child</NavLink></li>
-                <li><NavLink to="/roles">Home</NavLink></li>
+                <li><NavLink to={rolesLink}>Home</NavLink></li>
                 <li><NavLink to={progressLink}>Progress</NavLink></li>
                 
               </ul>
