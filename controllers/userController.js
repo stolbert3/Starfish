@@ -1,6 +1,7 @@
 const User = require("../models/user");
+import defaultTaskSeed from ("../scripts/defaultTasksDB.js")
 
-// Defining methods for the booksController
+// Defining methods for the userController
 module.exports = {
 
   findByEmail: function (req, res) {
@@ -13,7 +14,8 @@ module.exports = {
   },
 
   create: function (req, res) {
-    return User.create(req.body);
+    var userEmail = req.body.email.text();
+    return User.create({email: userEmail}, {childName: ''}, {parentName: ''}, {tasks: defaultTaskSeed})
   },
 
 }

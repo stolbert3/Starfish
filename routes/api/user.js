@@ -42,16 +42,16 @@ router.route("/:email")
     })
   })
 
-  .post(function(req, res, next) {
-    next(new Error('not implemented'));
-  })
+  //.post(function(req, res, next) {
+  //  next(new Error('not implemented'));
+  //})
 
-  .put(function(req, res, next) {
-    next(new Error('not implemented'));
-  })
+  //.put(function(req, res, next) {
+  //  next(new Error('not implemented'));
+  //})
 
-  .delete(function(req, res, next) {
-    next(new Error('not implemented'));
-  });
+  //.delete(function(req, res, next) {
+  //  next(new Error('not implemented'));
+  //});
 
 module.exports = router;

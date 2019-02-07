@@ -93,6 +93,8 @@ const defaultTaskSeed = [
   }
 ]
 
+module.exports = defaultTaskSeed;
+
 db.User
   .remove({})
   .then(() => db.User.collection.insertMany(defaultTaskSeed))
