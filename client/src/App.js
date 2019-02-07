@@ -11,7 +11,7 @@ const App = () => (
     <div style={{width:"100%"}}>
       {/* <Nav /> */}
       <Switch>
-        <Route exact path="/role" component={RolesComponent} />
+        <Route exact path="/roles" component={RolesComponent} />
         <Route exact path="/parent/:email" component={ParentComponent} />
         <Route exact path="/child/:email" component={ChildComponent} />
         <Route component={NoMatch} />
