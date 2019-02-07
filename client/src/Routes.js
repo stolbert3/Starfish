@@ -26,7 +26,7 @@ const Routes = () => (
       <Route path="/child/:email" component={ChildComponent} /> 
    
       <Route path="/progress/:email" component={ChildProgressView} /> 
-      <Route path="/roles" component={RolesComponent} /> 
+      <Route path="/roles/:email" component={RolesComponent} /> 
       <Route path="/TaskDetails" component={TaskDetails} />
       <Route path="/callback" render={(props) => {
         handleAuthentication(props);

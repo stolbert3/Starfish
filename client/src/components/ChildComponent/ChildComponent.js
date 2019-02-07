@@ -97,7 +97,7 @@ class ChildComponent extends React.Component {
         const email = this.state.email;
         const parentLink = `/parent/${email}`
         const progressLink = `/progress/${email}`
-        //const rolesLink = `/roles/${email}`
+        const rolesLink = `/roles/${email}`
       return(
     
 
@@ -107,7 +107,7 @@ class ChildComponent extends React.Component {
            <div>
               <ul id="nav">
                 <li><NavLink to={parentLink}>Parent</NavLink></li>
-                <li><NavLink to="/roles">Home</NavLink></li>
+                <li><NavLink to={rolesLink}>Home</NavLink></li>
                 <li><NavLink to={progressLink}>Progress</NavLink></li>
                 
               </ul>

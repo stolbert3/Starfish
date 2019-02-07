@@ -25,7 +25,7 @@ export default class Auth {
         //query api, get user or create new user if null
         this.setSession(authResult);
         console.log(authResult);
-        history.replace('/roles');
+        history.replace('/roles/:email');
       } else if (err) {
         history.replace('/home');
         console.log(err);
