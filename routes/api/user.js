@@ -9,7 +9,7 @@ router.param('email', function(req, res, next, id) {
 
 // Matches with "/api/user"
 router.route("/:email")
-   .all(function(req, res, next) {
+  .all(function(req, res, next) {
      // runs for all HTTP verbs
      next();
   })
@@ -32,24 +32,26 @@ router.route("/:email")
     });
   })
   
-  // create post for future record creation
-  // .post(function(req, res, next) {
-  //   userController.create(req, res).exec(function (err, doc) {
-  //     if (err) {
-  //       console.log(500);
-  //       res.status(500);
-  //     }
-  //     res.status(200).send(doc);
-  //   })
+  .post(function(req, res, next) {
+    userController.create(req, res).exec(function (err, doc) {
+      if (err) {
+        console.log(500);
+        res.status(500);
+      }
+      res.status(200).send(doc);
+    })
+  })
 
-  // //.post(function(req, res, next) {
-  // //  next(new Error('not implemented'));
-  // //})
-  // //.put(function(req, res, next) {
-  //   //next(new Error('not implemented'));
-  // //})
-  // .delete(function(req, res, next) {
-  //   next(new Error('not implemented'));
-  // });
+  .post(function(req, res, next) {
+    next(new Error('not implemented'));
+  })
+
+  .put(function(req, res, next) {
+    next(new Error('not implemented'));
+  })
+
+  .delete(function(req, res, next) {
+    next(new Error('not implemented'));
+  });
 
 module.exports = router;
