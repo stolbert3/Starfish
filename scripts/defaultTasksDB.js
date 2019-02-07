@@ -93,7 +93,7 @@ const defaultTaskSeed = [
   }
 ]
 
-module.exports = defaultTaskSeed;
+export {defaultTaskSeed};
 
 db.User
   .remove({})
