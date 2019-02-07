@@ -22,7 +22,7 @@ router.route("/:email")
       res.status(200).send(dbModel);
     });
   })
-  .put(function(req, res, next) {
+  /*.put(function(req, res, next) {
     userController.update(req, res).exec(function (err, updatedDoc) {
       if (err) {
         console.log(500);
@@ -52,6 +52,6 @@ router.route("/:email")
 
   //.delete(function(req, res, next) {
   //  next(new Error('not implemented'));
-  //});
+  //});*/
 
 module.exports = router;
