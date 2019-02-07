@@ -20,8 +20,8 @@ class ChildComponent extends React.Component {
 
     componentDidMount() {
         const email = localStorage.getItem("starfish_email");
-        this.setState ({email: email})
-        this.ScoreCount()
+        this.setState ({email: email});
+        this.ScoreCount();
 
         API.getUser(email)
         .then(res => {
