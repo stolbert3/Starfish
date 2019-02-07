@@ -41,5 +41,6 @@ align-items: center;
 }
 
 .buttonContainer img{
+    margin-top: 90px;
     width: 40%;
 }
