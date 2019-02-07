@@ -14,8 +14,8 @@ class RolesComponent extends React.Component {
     <div className="BodyContainer">
         <div className="container" />
             
-            <button className="role" onClick={() => { window.location.pathname = '/parent/' + email }}><img src="./images/serene_lady.svg" />Parent</button>
-            <button className="role" onClick={() => { window.location.pathname = '/child/' + email }}><img src="./images/face_neutral_3.svg" />Child</button>
+            <button className="role" onClick={() => { window.location.pathname = '/parent/' + email }}><img src="../../../images/serene_lady.svg" />Parent</button>
+            <button className="role" onClick={() => { window.location.pathname = '/child/' + email }}><img src="../../../images/face_neutral_3.svg" />Child</button>
             
         </div>
         
