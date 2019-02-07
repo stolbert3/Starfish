@@ -4,7 +4,8 @@
   "description": "This application is designed for a student with autism who is non-verbal and requires assistance with structure in their day. This application will utilize two Applied Behavioral Analysis tools – PECS (The Picture Exchange Communication System) and intermittent reward systems. No application currently combines PECS and intermittent reward systems. There are programs like iRewards and iPrompts that offer aspects of our application, but Starfish is novel in its combination of the two systems.",
   "main": "server.js",
   "engines": {
-    "node": "10.8.0"
+    "node": "10.8.0",
+    "npm": "6.2.0"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
