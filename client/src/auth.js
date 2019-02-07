@@ -7,7 +7,7 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: 'family-meal-productions.auth0.com',
     clientID: 'cacKrQsbK22uUgAjjp5CSebwNwLfLjYP',
-    redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'https://aqueous-brushlands-18189.herokuapp.com/roles/:email',
+    redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'https://aqueous-brushlands-18189.herokuapp.com/roles',
     audience: 'https://family-meal-productions.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid email'
@@ -25,7 +25,7 @@ export default class Auth {
         //query api, get user or create new user if null
         this.setSession(authResult);
         console.log(authResult);
-        history.replace('/roles/:email');
+        history.replace('/roles');
       } else if (err) {
         history.replace('/home');
         console.log(err);
