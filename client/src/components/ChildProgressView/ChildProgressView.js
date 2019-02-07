@@ -2,6 +2,7 @@ import  React  from 'react';
 import "../ChildComponent/ChildComponent.css";
 import TaskObject from "../../assets/TaskObject.js";
 import {Link , NavLink, withRouter} from 'react-router-dom'
+import API from "../../utils/API.js"
 
 class ChildProgressView extends React.Component {
     constructor(props) {
@@ -17,6 +18,22 @@ class ChildProgressView extends React.Component {
     }
 
 componentDidMount(){
+    const email = localStorage.getItem("starfish_email");
+    this.setState ({email: email})
+
+    API.getUser(email)
+    .then(res => {
+        console.log("res", res);
+        this.setState({
+            Tasks:res.data.tasks
+        }, ()=> console.log("state.Tasks",this.state.Tasks))
+        // if (res.data.tasks.length > 0) {
+        //     let tasks = res.data.tasks.slice();
+        //     tasks[0].complete = true;
+        //     API.updateUser('ahs4448@gmail.com', tasks)
+        //     .then(res => console.log('FRONT END UPDATE TEST', res));
+        // }
+    }) 
     this.ScoreCount()
 }
 
@@ -154,37 +171,37 @@ componentDidMount(){
                     image = "/images/brush_teeth_,_to.svg"
                     break;
                 case 'Brush Hair':
-                    image = "images/brush_hair_,_to.svg"
+                    image = "/images/brush_hair_,_to.svg"
                     break;
                 case 'Get Dressed':
-                    image = "images/change_clothes_,_to.svg"
+                    image = "/images/change_clothes_,_to.svg"
                     break;
                 case 'Eat Breakfast':
-                    image = "images/cornflakes.svg"
+                    image = "/images/cornflakes.svg"
                     break;
                 case 'Eat Lunch':
-                    image = "images/sandwich.svg"
+                    image = "/images/sandwich.svg"
                     break;
                 case 'Eat Dinner':
-                    image = "images/dinner.svg"
+                    image = "/images/dinner.svg"
                     break;
                 case 'Play Inside':
-                    image = "images/play_,_to.svg"
+                    image = "/images/play_,_to.svg"
                     break;
                 case 'Play Outside':
-                    image = "images/swing_,_to.svg"
+                    image = "/images/swing_,_to.svg"
                     break;
                 case 'In-home Therapy':
-                    image = "images/speech_language_therapist_1a.svg"
+                    image = "/images/speech_language_therapist_1a.svg"
                     break;
                 case 'Take Shower':
-                    image = "images/shower_1_,_to.svg"
+                    image = "/images/shower_1_,_to.svg"
                     break;
                 case 'Put on PJs':
-                    image = "images/pyjamas.svg"
+                    image = "/images/pyjamas.svg"
                     break;
                 case 'Go to Bed':
-                    image = "images/sleep_male_,_to.svg"
+                    image = "/images/sleep_male_,_to.svg"
                     break;
 
 
