@@ -54,7 +54,7 @@ class ParentComponent extends React.Component {
 
                 <h1> Parent </h1>
 
-                <h1>Points:{this.state.score}</h1>
+               
 
 
                 <hr/>
